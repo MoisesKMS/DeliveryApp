@@ -1,6 +1,7 @@
-@use 'variables' as v; 
+@use 'variables' as v;
 
 /** Media Queries **/
+
 @mixin telefono {
     @media (min-width: v.$telefono) {
         @content;
@@ -12,13 +13,12 @@
         @content;
     }
 }
-  
+
 @mixin desktop {
     @media (min-width: v.$desktop) {
         @content;
     }
 }
-
 
 @mixin boton($color, $texto) {
     background-color: $color;
@@ -33,18 +33,16 @@
     text-decoration: none;
     transition: background-color .3s ease;
     border: none;
-
     &:hover {
         cursor: pointer;
         background-color: darken($color, 10);
     }
-
     @include tablet {
         width: auto;
     }
 }
 
-@mixin grid($columnas, $espaciado ) {
+@mixin grid($columnas, $espaciado) {
     display: grid;
     gap: $espaciado;
     grid-template-columns: repeat($columnas, 1fr);
